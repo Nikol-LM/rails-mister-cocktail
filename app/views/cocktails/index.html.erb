@@ -1,11 +1,16 @@
-<h1> All our cocktails </h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519214605650-76a613ee3245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80);">
+  <div class="container">
+    <h1>All you need <strong>is alcohol</strong>!</h1>
+    <p> keep calm and drink a cocktail </p>
+    <ul>
+      <% @cocktails.each do |cocktail| %>
+      <li>
+        <%= link_to cocktail.name, cocktail_path(cocktail)%>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to 'Create your own Cocktial', new_cocktail_path %>
+  </div>
+</div>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li>
-    <%= link_to cocktail.name, cocktail_path(cocktail)%>
-  </li>
-  <% end %>
-</ul>
 
-<%= link_to 'Create your own Cocktial', new_cocktail_path %>
