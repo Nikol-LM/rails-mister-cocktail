@@ -1,16 +1,13 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1519214605650-76a613ee3245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80);">
-  <div class="container">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80;">
     <h1>All you need <strong>is alcohol</strong>!</h1>
     <p> keep calm and drink a cocktail </p>
-    <ul>
-      <% @cocktails.each do |cocktail| %>
-      <li>
-        <%= link_to cocktail.name, cocktail_path(cocktail)%>
-      </li>
-      <% end %>
-    </ul>
     <%= link_to 'Create your own Cocktial', new_cocktail_path %>
+</div>
+<div class="container">
+   <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.photo.present? ? cl_image_path(cocktail.photo, height: 300, width: 400, crop: :fill) : image_path('cocktail-placeholder.jpg') %>')"> <%= link_to cocktail.name, cocktail_path(cocktail)%>
+        </div>
+      <% end %>
   </div>
 </div>
-
-

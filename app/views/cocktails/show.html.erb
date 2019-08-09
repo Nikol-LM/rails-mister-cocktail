@@ -1,6 +1,7 @@
 
 <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546171753-97d7676e4602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
   <h1><%= @cocktail.name %> Cocktail</h1>
+</div>
   <p><% @cocktail.ingredients %></p>
   <ul>
     <% @cocktail.doses.each do |dose| %>
@@ -9,11 +10,8 @@
     </li>
     <% end %>
   </ul>
-
-
   <%= link_to 'Add doses and ingredients ', new_cocktail_dose_path(@cocktail) %>
   ||
 
   <%= link_to 'See all cockatils', cocktails_path %>
-</div>
 
